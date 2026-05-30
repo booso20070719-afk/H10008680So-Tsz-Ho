@@ -1,0 +1,316 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark: #0a0a0c;
+    --bg-card: #121418;
+    --bg-card-alt: #181c22;
+    --neon-purple: #c44dff;
+    --neon-magenta: #ff2d78;
+    --neon-cyan: #00e5ff;
+    --neon-yellow: #ffd740;
+    --gold: #f0b90b;
+    --gold-light: #ffe082;
+    --text-primary: #e8e6e3;
+    --text-secondary: #b0ada8;
+    --text-muted: #7a7671;
+    --border-subtle: #2a2d33;
+    --border-glow: rgba(196, 77, 255, 0.35);
+    --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.5);
+    --shadow-glow-purple: 0 0 40px rgba(196, 77, 255, 0.25);
+    --shadow-glow-gold: 0 0 50px rgba(240, 185, 11, 0.3);
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Noto Sans TC', 'Rajdhani', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.75;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        radial-gradient(ellipse at 20% 15%, rgba(196, 77, 255, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 75% 60%, rgba(255, 45, 120, 0.05) 0%, transparent 55%),
+        radial-gradient(ellipse at 50% 85%, rgba(0, 229, 255, 0.04) 0%, transparent 50%),
+        repeating-linear-gradient(0deg,
+            transparent,
+            transparent 2px,
+            rgba(255, 249, 169, 0) 2px,
+            rgba(250, 157, 157, 0) 4px);
+}
+
+.main {
+    position: relative;
+    z-index: 1;
+    min-height: 50vh;
+    overflow: hidden;
+}
+
+.main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-image: url('image.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(8px) brightness(0.7);
+    transform: scale(1.1);
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem 4rem;
+}
+
+.section-label {
+    display: inline-block;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+    color: var(--neon-purple);
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+}
+
+
+/* My Achievement */
+
+.story {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem 2rem;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+}
+
+.story::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--neon-purple), var(--neon-magenta));
+    border-radius: 4px 0 0 4px;
+}
+
+.story h2 {
+    font-family: 'Bebas Neue', 'Rajdhani', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.story h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--neon-cyan);
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+.story p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.85;
+}
+
+
+/* The Game */
+.stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+
+
+.stat {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.8rem;
+    box-shadow: var(--shadow-card);
+}
+
+.stat h2 {
+    font-family: 'Bebas Neue', 'Rajdhani', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.stat p {
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+
+
+
+
+
+/* At the beginning of fighting games */
+
+.intro-guide {
+    background: var(--bg-card-alt);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem 2rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+}
+
+.intro-guide h2 {
+    font-family: 'Bebas Neue', 'Rajdhani', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.intro-guide .intro-text {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+    text-align: left;
+}
+
+.image-slot {
+    width: 100%;
+    max-width: 700px;
+    height: 220px;
+    margin: 0 auto 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder-text {
+    color: var(--text-muted);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.intro-guide p:not(.intro-text) {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 1rem;
+    text-align: left;
+}
+
+
+/* Combos */
+
+.quote-block {
+    background: var(--bg-card-alt);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem 2rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+}
+
+.quote-block h2 {
+    font-family: 'Bebas Neue', 'Rajdhani', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.quote-block p {
+    color: var(--text-secondary);
+    font-size: 1.08rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 1rem;
+    text-align: left;
+}
+
+
+/* Conclusion */
+
+.summary-quote {
+    margin: 1.5rem 0 2rem;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid var(--neon-purple);
+    background: rgba(196, 77, 255, 0.05);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    font-family: 'Rajdhani', 'Noto Sans TC', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-primary);
+    font-style: italic;
+}
+
+.summary-quote span {
+    display: block;
+    margin-top: 0.8rem;
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--neon-cyan);
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+
